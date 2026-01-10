@@ -67,6 +67,14 @@ source ~/.bashrc
 9.  Move Hadoop folder to a more appropriate location `/usr/local/`
 ```bash 
 mv hadoop-3.4.2 /usr/local/hadoop
+
+# Edit the Hadoop environment file:
+nano /usr/local/hadoop/etc/hadoop/hadoop-env.sh
+
+# find the line 
+# export JAVA_HOME=
+# change it to 
+# export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 ```
 10. Format Hadoop FileSystem and start the HDFS
 ```bash 
