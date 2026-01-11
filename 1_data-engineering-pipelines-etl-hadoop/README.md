@@ -1,5 +1,11 @@
 # Data Engineering: Pipelines, ETL, Hadoop
 
+### Reading
+
+- [Data Engineer Skills: Roles and Resposibilities](https://www.simplilearn.com/data-engineer-role-article)
+- [ETL and Data Warehousing Explained: ETL Tool Basics](https://www.integrate.io/blog/etl-data-warehousing-explained-etl-tool-basics/)
+- [Streamlining Business Solutions: The Role of Data Analysis and Visual Tools](https://analystanswers.com/solution-design-template-steps-definition/)
+
 ### Setting Up Hadoop
 
 1. Update the system 
@@ -43,14 +49,18 @@ ssh localhost
 7. Download and Extract Hadoop
 ```bash 
 wget https://downloads.apache.org/hadoop/common/hadoop-3.4.2/hadoop-3.4.2.tar.gz
+```
 
+```bash 
 tar -xvzf hadoop-3.4.2.tar.gz
 ```
 
 8. Configure Hadoop Environment Variables (bashrc)
 ```bash 
 sudo nano ~/.bashrc
+```
 
+```bash 
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 export HADOOP_HOME=/usr/local/hadoop
 export HADOOP_INSTALL=$HADOOP_HOME 
@@ -61,21 +71,29 @@ export YARN_HOME=$HADOOP_HOME
 export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native 
 export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
 export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
+```
 
+```bash 
 source ~/.bashrc
 ```
+
 9.  Move Hadoop folder to a more appropriate location `/usr/local/`
 ```bash 
 mv hadoop-3.4.2 /usr/local/hadoop
+```
 
+```bash
 # Edit the Hadoop environment file:
 nano /usr/local/hadoop/etc/hadoop/hadoop-env.sh
+```
 
+```bash
 # find the line 
 # export JAVA_HOME=
 # change it to 
 # export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 ```
+
 10. Format Hadoop FileSystem and start the HDFS
 ```bash 
 hdfs namenode -format
